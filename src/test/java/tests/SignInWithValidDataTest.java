@@ -14,7 +14,7 @@ public class SignInWithValidDataTest extends BaseTest {
 
     @Test
     @Description("User tries to sign in")
-    public void createAccountTest() {
+    public void signInTest() {
         MainStorePage mainStorePage = new MainStorePage(driver);
         LOGGER.info(String.format("Page %s initialized", MainStorePage.class.getName()));
         LOGGER.info(String.format("Open %s page", MainStorePage.class.getName()));
