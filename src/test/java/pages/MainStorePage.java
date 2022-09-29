@@ -20,7 +20,7 @@ public class MainStorePage extends BasePage{
         super(driver);
     }
 
-    @Step("Open Store page")
+    @Step("Open sign in page")
     public SignInPage openSignInPage() {
         LOGGER.debug(String.format("Attempt to open URl: %s", Urls.SHOP_URL));
         driver.get(Urls.SHOP_URL);

@@ -18,6 +18,8 @@
         <allure-testng.version>2.19.0</allure-testng.version>
         <slf4j-nop.version>1.7.25</slf4j-nop.version>
         <javafaker.version>1.0.2</javafaker.version>
+        <aspectj.version>1.9.7</aspectj.version>
+        <suiteXmlFile>src/test/resources/testsuites/RegressionSuite.xml</suiteXmlFile>
     </properties>
 
     <dependencies>
@@ -78,6 +80,29 @@
                 <target>11</target>
             </configuration>
         </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M4</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+                    </suiteXmlFiles>
+                    <argLine>
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                    </argLine>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>${aspectj.version}</version>
+                        <scope>runtime</scope>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
         </plugins>
     </build>
 

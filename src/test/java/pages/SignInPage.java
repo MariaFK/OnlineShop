@@ -40,7 +40,7 @@ public class SignInPage extends BasePage {
     }
 
     @Step("Sign In")
-    public AccountPage signInToStoreWithInalidData() {
+    public AccountPage signInToStoreWithInvalidData() {
         LOGGER.debug("Attempt to send username");
         emailInput.sendKeys(FakerMessageGenerator.generateEmail());
         LOGGER.debug("Attempt to send password");
