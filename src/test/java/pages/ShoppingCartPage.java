@@ -31,7 +31,7 @@ public class ShoppingCartPage extends BasePage {
     }
 
     public void putExplicitWait() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, 15);
         wait.until(ExpectedConditions.visibilityOf(INFORMATION_MESSAGE_ABOUT_CART_STATUS));
     }
 

@@ -98,6 +98,8 @@ public class MainStorePage extends BasePage {
                 "evObj.initMouseEvent(\"mouseover\",true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);" +
                 "arguments[0].dispatchEvent(evObj);";
         ((JavascriptExecutor)driver).executeScript(javaScript, SHOPPING_CART_BUTTON);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.visibilityOf(ITEM_PRICE_IN_SHOPPING_CART));
         return ITEM_PRICE_IN_SHOPPING_CART.getText();
     }
 
