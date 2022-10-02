@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 public class AccountPage extends BasePage{
 
     @FindBy(xpath = "//a[@class='logout']")
-    WebElement signOutButton;
+    WebElement SIGN_OUT_BUTTON;
 
     public AccountPage(WebDriver driver) {
         super(driver);
@@ -17,6 +17,6 @@ public class AccountPage extends BasePage{
 
     @Step("Check if user is signed in")
     public boolean userSignedIn() {
-        return signOutButton.isDisplayed();
+        return SIGN_OUT_BUTTON.isDisplayed();
     }
 }

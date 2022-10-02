@@ -14,13 +14,13 @@ public class SignInPage extends BasePage {
     private static final Logger LOGGER = LogManager.getLogger(SignInPage.class.getName());
 
     @FindBy(id = "email")
-    WebElement emailInput;
+    WebElement EMAIL_INPUT;
 
     @FindBy(id = "passwd")
-    WebElement passwordInput;
+    WebElement PASSWORD_INPUT;
 
     @FindBy(id= "SubmitLogin")
-    WebElement signInButton;
+    WebElement SIGN_IN_BUTTON;
 
 
 
@@ -31,22 +31,22 @@ public class SignInPage extends BasePage {
     @Step("Sign In")
     public AccountPage signInToStoreWithValidData() {
         LOGGER.debug("Attempt to send username");
-        emailInput.sendKeys(Credentials.USERNAME);
+        EMAIL_INPUT.sendKeys(Credentials.USERNAME);
         LOGGER.debug("Attempt to send password");
-        passwordInput.sendKeys(Credentials.PASSWORD);
-        LOGGER.debug(String.format("Attempt to click element: %s", signInButton));
-        signInButton.click();
+        PASSWORD_INPUT.sendKeys(Credentials.PASSWORD);
+        LOGGER.debug(String.format("Attempt to click element: %s", SIGN_IN_BUTTON));
+        SIGN_IN_BUTTON.click();
         return new AccountPage(driver);
     }
 
     @Step("Sign In")
     public AccountPage signInToStoreWithInvalidData() {
         LOGGER.debug("Attempt to send username");
-        emailInput.sendKeys(FakerMessageGenerator.generateEmail());
+        EMAIL_INPUT.sendKeys(FakerMessageGenerator.generateEmail());
         LOGGER.debug("Attempt to send password");
-        passwordInput.sendKeys(FakerMessageGenerator.generatePassword());
-        LOGGER.debug(String.format("Attempt to click element: %s", signInButton));
-        signInButton.click();
+        PASSWORD_INPUT.sendKeys(FakerMessageGenerator.generatePassword());
+        LOGGER.debug(String.format("Attempt to click element: %s", SIGN_IN_BUTTON));
+        SIGN_IN_BUTTON.click();
         return new AccountPage(driver);
     }
 }
