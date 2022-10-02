@@ -7,6 +7,7 @@
             <class name="tests.SignInWithValidDataTest"></class>
             <class name="tests.AddItemToTheShoppingCartTest"></class>
             <class name="tests.DeleteItemFromTheShoppingCartTest"></class>
+            <class name="tests.CompareThePriceOfItemAndThePriceInShoppingCartTest"></class>
         </classes>
     </test>
 </suite>

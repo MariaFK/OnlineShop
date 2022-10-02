@@ -19,14 +19,11 @@ public class MainStorePage extends BasePage {
     @FindBy(xpath = "//a[@class='login']")
     WebElement SIGN_IN_LINK;
 
-    @FindBy(xpath = "(//a[contains(@class,'product-name')][contains(@title,'Blouse')])[1]")
-    WebElement BLOUSE_BLOCK;
+//    @FindBy(xpath = "(//a[contains(@class,'product-name')][contains(@title,'Blouse')])[1]")
+//    WebElement BLOUSE_BLOCK;
 
     @FindBy(xpath = "(//a[contains(@class,'product-name')][contains(@title,'Blouse')])[1]/parent::h5/following-sibling::div[@class='button-container']//a[@title='Add to cart']")
     WebElement ADD_BLOUSE_TO_CART;
-
-//    @FindBy(xpath = "//div[@class='shopping_cart']//span[@class='ajax_cart_quantity']")
-//    WebElement ITEM_QUANTITY_IN_SHOPPING_CART;
 
     @FindBy(xpath = "//i[@class='icon-ok']")
     WebElement CONFIRM_MESSAGE;
@@ -37,8 +34,13 @@ public class MainStorePage extends BasePage {
     @FindBy(xpath = "//div[@class='shopping_cart']//a[@title='View my shopping cart']")
     WebElement SHOPPING_CART_BUTTON;
 
-    @FindBy(xpath = "//span[@class='remove_link']//a[@rel='nofollow']")
-    WebElement DELETE_ITEM_FROM_SHOPPING_CART_BUTTON;
+
+    @FindBy(xpath = "//div[@class='shopping_cart']//span[@class='price']")
+    WebElement ITEM_PRICE_IN_SHOPPING_CART;
+
+    @FindBy(xpath = "(//a[contains(@class,'product-name')][contains(@title,'Blouse')])[1]/parent::h5/following-sibling::div[@class='content_price']//span[contains(@class,'price')]")
+    WebElement ITEM_PRICE_IN_THE_SHOP;
+
 
     public MainStorePage(WebDriver driver) {
         super(driver);
@@ -66,9 +68,10 @@ public class MainStorePage extends BasePage {
         return this;
     }
 
-    public void putExplicitWait() {
+    public MainStorePage putExplicitWait() {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOf(CONFIRM_MESSAGE));
+        return this;
     }
 
     public boolean itemIsAdded() {
@@ -87,5 +90,20 @@ public class MainStorePage extends BasePage {
         LOGGER.debug("Attempt to click Shopping cart button");
         SHOPPING_CART_BUTTON.click();
         return new ShoppingCartPage(driver);
+    }
+    @Step("Check the item's price in the shopping cart")
+    public String actualItemPriceInTheShoppingCart() {
+        LOGGER.debug("Get the item's price the shopping cart");
+        String javaScript = "var evObj = document.createEvent('MouseEvents');" +
+                "evObj.initMouseEvent(\"mouseover\",true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);" +
+                "arguments[0].dispatchEvent(evObj);";
+        ((JavascriptExecutor)driver).executeScript(javaScript, SHOPPING_CART_BUTTON);
+        return ITEM_PRICE_IN_SHOPPING_CART.getText();
+    }
+
+
+    public String expectedItemPrice() {
+        LOGGER.debug("Get the item's price the shop");
+        return ITEM_PRICE_IN_THE_SHOP.getText();
     }
 }
