@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="OnlineShop Test" thread-count = "3" parallel="classes">
+<suite name="OnlineShop Test" thread-count = "2" parallel="classes">
     <test name="CreateAccountTest">
         <classes>
             <class name="tests.SignInWithInvalidDataTest"></class>
             <class name="tests.SignInWithValidDataTest"></class>
             <class name="tests.AddItemToTheShoppingCartTest"></class>
+            <class name="tests.DeleteItemFromTheShoppingCartTest"></class>
         </classes>
     </test>
 </suite>
