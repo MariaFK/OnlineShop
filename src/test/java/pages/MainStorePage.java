@@ -41,6 +41,12 @@ public class MainStorePage extends BasePage {
     @FindBy(xpath = "(//a[contains(@class,'product-name')][contains(@title,'Blouse')])[1]/parent::h5/following-sibling::div[@class='content_price']//span[contains(@class,'price')]")
     WebElement ITEM_PRICE_IN_THE_SHOP;
 
+    @FindBy(id = "search_query_top")
+    WebElement SEARCH_INPUT;
+
+    @FindBy(name = "submit_search")
+    WebElement SEARCH_BUTTON;
+
 
     public MainStorePage(WebDriver driver) {
         super(driver);
@@ -63,13 +69,13 @@ public class MainStorePage extends BasePage {
         String javaScript = "var evObj = document.createEvent('MouseEvents');" +
                 "evObj.initMouseEvent(\"mouseover\",true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);" +
                 "arguments[0].dispatchEvent(evObj);";
-        ((JavascriptExecutor)driver).executeScript(javaScript, ADD_BLOUSE_TO_CART);
+        ((JavascriptExecutor) driver).executeScript(javaScript, ADD_BLOUSE_TO_CART);
         ADD_BLOUSE_TO_CART.click();
         return this;
     }
 
     public MainStorePage putExplicitWait() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, 15);
         wait.until(ExpectedConditions.visibilityOf(CONFIRM_MESSAGE));
         return this;
     }
@@ -86,26 +92,38 @@ public class MainStorePage extends BasePage {
     }
 
     @Step("Click Shopping Cart button")
-    public ShoppingCartPage clickShoppingCartButton(){
+    public ShoppingCartPage clickShoppingCartButton() {
         LOGGER.debug("Attempt to click Shopping cart button");
         SHOPPING_CART_BUTTON.click();
         return new ShoppingCartPage(driver);
     }
+
     @Step("Check the item's price in the shopping cart")
     public String actualItemPriceInTheShoppingCart() {
         LOGGER.debug("Get the item's price the shopping cart");
         String javaScript = "var evObj = document.createEvent('MouseEvents');" +
                 "evObj.initMouseEvent(\"mouseover\",true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);" +
                 "arguments[0].dispatchEvent(evObj);";
-        ((JavascriptExecutor)driver).executeScript(javaScript, SHOPPING_CART_BUTTON);
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        ((JavascriptExecutor) driver).executeScript(javaScript, SHOPPING_CART_BUTTON);
+        WebDriverWait wait = new WebDriverWait(driver, 15);
         wait.until(ExpectedConditions.visibilityOf(ITEM_PRICE_IN_SHOPPING_CART));
         return ITEM_PRICE_IN_SHOPPING_CART.getText();
     }
-
 
     public String expectedItemPrice() {
         LOGGER.debug("Get the item's price the shop");
         return ITEM_PRICE_IN_THE_SHOP.getText();
     }
+
+    @Step("Search for item")
+    public SearchPage searchItem(){
+        LOGGER.debug(String.format("Attempt to open URl: %s", Urls.SHOP_URL));
+        driver.get(Urls.SHOP_URL);
+        LOGGER.debug("Attempt to search item");
+        SEARCH_INPUT.sendKeys("Blouse");
+        SEARCH_BUTTON.click();
+        return new SearchPage(driver);
+    }
+
+
 }
