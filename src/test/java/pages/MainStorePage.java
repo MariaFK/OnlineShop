@@ -7,7 +7,6 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -45,7 +44,10 @@ public class MainStorePage extends BasePage {
     WebElement SEARCH_INPUT;
 
     @FindBy(name = "submit_search")
-    WebElement SEARCH_BUTTON;
+    WebElement SEARCH_BY_NAME_BUTTON;
+
+    @FindBy(xpath = "//a[@title='Women']")
+    WebElement CRITERIA_SEARCH_BUTTON;
 
 
     public MainStorePage(WebDriver driver) {
@@ -115,14 +117,23 @@ public class MainStorePage extends BasePage {
         return ITEM_PRICE_IN_THE_SHOP.getText();
     }
 
-    @Step("Search for item")
-    public SearchPage searchItem(){
+    @Step("Search for item by name")
+    public SearchResultPage searchItemByName(){
         LOGGER.debug(String.format("Attempt to open URl: %s", Urls.SHOP_URL));
         driver.get(Urls.SHOP_URL);
-        LOGGER.debug("Attempt to search item");
+        LOGGER.debug("Attempt to search item Blouse");
         SEARCH_INPUT.sendKeys("Blouse");
-        SEARCH_BUTTON.click();
-        return new SearchPage(driver);
+        SEARCH_BY_NAME_BUTTON.click();
+        return new SearchResultPage(driver);
+    }
+
+    @Step("Go to search for item by criteria")
+    public SearchResultPage searchItemByCriteria(){
+        LOGGER.debug(String.format("Attempt to open URl: %s", Urls.SHOP_URL));
+        driver.get(Urls.SHOP_URL);
+        LOGGER.debug("Attempt to open search by criteria");
+        CRITERIA_SEARCH_BUTTON.click();
+        return new SearchResultPage(driver);
     }
 
 

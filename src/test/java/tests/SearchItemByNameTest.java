@@ -8,11 +8,11 @@ import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.MainStorePage;
-import pages.SearchPage;
+import pages.SearchResultPage;
 
-public class SearchItemTest extends BaseTest{
+public class SearchItemByNameTest extends BaseTest{
 
-    private static final Logger LOGGER = LogManager.getLogger(SearchItemTest.class.getName());
+    private static final Logger LOGGER = LogManager.getLogger(SearchItemByNameTest.class.getName());
 
     @Test
     @Description("User tries to search for item")
@@ -22,10 +22,10 @@ public class SearchItemTest extends BaseTest{
         LOGGER.info(String.format("Page %s initialized", MainStorePage.class.getName()));
         LOGGER.info(String.format("Open %s page", MainStorePage.class.getName()));
         LOGGER.info("Attempt to search for Blouse");
-        mainStorePage.searchItem();
-        LOGGER.info(String.format("Page %s initialized", SearchPage.class.getName()));
-        LOGGER.info(String.format("Open %s page", SearchPage.class.getName()));
-        SearchPage searchPage = new SearchPage(driver);
+        mainStorePage.searchItemByName();
+        LOGGER.info(String.format("Page %s initialized", SearchResultPage.class.getName()));
+        LOGGER.info(String.format("Open %s page", SearchResultPage.class.getName()));
+        SearchResultPage searchPage = new SearchResultPage(driver);
         LOGGER.info("Check if the item was found");
         Assert.assertTrue(searchPage.searchResultIsShown());
     }

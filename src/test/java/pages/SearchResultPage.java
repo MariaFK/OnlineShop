@@ -5,18 +5,16 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class SearchPage extends BasePage {
+public class SearchResultPage extends BasePage {
 
-    private static final Logger LOGGER = LogManager.getLogger(SearchPage.class.getName());
+    private static final Logger LOGGER = LogManager.getLogger(SearchResultPage.class.getName());
 
 
     @FindBy(className = "heading-counter")
     WebElement SEARCH_RESULTS;
 
-    public SearchPage(WebDriver driver) {
+    public SearchResultPage(WebDriver driver) {
         super(driver);
     }
     public boolean searchResultIsShown(){
