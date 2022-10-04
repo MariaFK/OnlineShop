@@ -4,4 +4,5 @@ Checklist:
 3. Check the possibility to add an item to the shopping cart.
 4. Check the possibility to delete an item from the shopping cart.
 5. Check if the item's price the same as the item's price in the shopping cart.
-6. Check the possibility to search for items.
+6. Check the possibility to search for item by name (blouse).
+7. Check the possibility to search for item by criteria (black color, cotton).

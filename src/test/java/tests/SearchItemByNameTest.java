@@ -15,9 +15,9 @@ public class SearchItemByNameTest extends BaseTest{
     private static final Logger LOGGER = LogManager.getLogger(SearchItemByNameTest.class.getName());
 
     @Test
-    @Description("User tries to search for item")
+    @Description("User tries to search for item by name")
     @Severity(SeverityLevel.NORMAL)
-    public void addItemToTheShoppingCartTest() {
+    public void searchItemByNameTest() {
         MainStorePage mainStorePage = new MainStorePage(driver);
         LOGGER.info(String.format("Page %s initialized", MainStorePage.class.getName()));
         LOGGER.info(String.format("Open %s page", MainStorePage.class.getName()));
