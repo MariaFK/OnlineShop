@@ -9,6 +9,7 @@
             <class name="tests.DeleteItemFromTheShoppingCartTest"></class>
             <class name="tests.CompareThePriceOfItemAndThePriceInShoppingCartTest"></class>
             <class name="tests.SearchItemByNameTest"></class>
+            <class name="tests.SearchItemByCriteriaTest"></class>
         </classes>
     </test>
 </suite>
