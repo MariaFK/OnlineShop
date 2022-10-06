@@ -6,3 +6,4 @@ Checklist:
 5. Check if the item's price the same as the item's price in the shopping cart.
 6. Check the possibility to search for item by name (blouse).
 7. Check the possibility to search for item by criteria (black color, cotton).
+8. Check the possibility to add additional address in account page.

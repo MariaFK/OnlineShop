@@ -32,10 +32,12 @@ public class SearchResultPage extends BasePage {
     }
 
     @Step("Set criteria for the search")
-    public void chooseTheCriteria(){
+    public void chooseTheCriteria() throws InterruptedException {
         LOGGER.debug("Attempt to click checkbox with black color");
         BLACK_COLOR_CHECKBOX.click();
+        Thread.sleep(1000);
         LOGGER.debug("Attempt to click checkbox with cotton");
         COTTON_CHECKBOX.click();
+        Thread.sleep(1000);
     }
 }

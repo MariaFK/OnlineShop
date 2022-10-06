@@ -18,7 +18,7 @@ public class SearchItemByCriteriaTest extends BaseTest{
     @Test
     @Description("User tries to search for item by criteria")
     @Severity(SeverityLevel.NORMAL)
-    public void serchItemByCriteriaTest() {
+    public void serchItemByCriteriaTest() throws InterruptedException {
         MainStorePage mainStorePage = new MainStorePage(driver);
         LOGGER.info(String.format("Page %s initialized", MainStorePage.class.getName()));
         LOGGER.info(String.format("Open %s page", MainStorePage.class.getName()));
