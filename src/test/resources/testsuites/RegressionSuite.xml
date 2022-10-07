@@ -12,6 +12,7 @@
             <class name="tests.SearchItemByCriteriaTest"></class>
             <class name="tests.AddAddressTest"></class>
             <class name="tests.ConfirmAnOderTest"></class>
+            <class name="tests.SendMessageTest"></class>
         </classes>
     </test>
 </suite>

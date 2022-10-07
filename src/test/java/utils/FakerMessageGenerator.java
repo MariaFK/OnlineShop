@@ -41,7 +41,4 @@ public class FakerMessageGenerator {
         return new Faker().harryPotter().character().toUpperCase();
     }
 
-
-
-
 }

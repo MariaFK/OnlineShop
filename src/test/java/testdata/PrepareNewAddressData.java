@@ -3,7 +3,7 @@ package testdata;
 import models.NewAddressModel;
 import utils.FakerMessageGenerator;
 
-public class PrepareNewAddressDate {
+public class PrepareNewAddressData {
 
     public static NewAddressModel getValidData(){
         return NewAddressModel.builder()

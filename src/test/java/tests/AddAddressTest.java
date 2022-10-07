@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 import pages.AccountPage;
 import pages.MainStorePage;
 import pages.NewAddressPage;
-import testdata.PrepareNewAddressDate;
+import testdata.PrepareNewAddressData;
 
 public class AddAddressTest extends BaseTest{
 
@@ -35,7 +35,7 @@ public class AddAddressTest extends BaseTest{
         LOGGER.info(String.format("Open %s page", NewAddressPage.class.getName()));
         NewAddressPage newAddressPage = new NewAddressPage(driver);
         LOGGER.info(String.format("Model %s initialized", NewAddressModel.class.getName()));
-        NewAddressModel addressModel = PrepareNewAddressDate.getValidData();
+        NewAddressModel addressModel = PrepareNewAddressData.getValidData();
         LOGGER.info("Open new address model, fill in address form");
         newAddressPage.fillInAddressForm(addressModel);
         LOGGER.info("Check if address is created");

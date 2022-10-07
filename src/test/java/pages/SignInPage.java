@@ -2,6 +2,7 @@ package pages;
 
 import constants.Credentials;
 import io.qameta.allure.Step;
+import models.SignInModel;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -40,11 +41,11 @@ public class SignInPage extends BasePage {
     }
 
     @Step("Sign In")
-    public AccountPage signInToStoreWithInvalidData() {
+    public AccountPage signInToStoreWithInvalidData(SignInModel signIn) {
         LOGGER.debug("Attempt to send username");
-        EMAIL_INPUT.sendKeys(FakerMessageGenerator.generateEmail());
+        EMAIL_INPUT.sendKeys(signIn.getEmail());
         LOGGER.debug("Attempt to send password");
-        PASSWORD_INPUT.sendKeys(FakerMessageGenerator.generatePassword());
+        PASSWORD_INPUT.sendKeys(signIn.getPassword());
         LOGGER.debug(String.format("Attempt to click element: %s", SIGN_IN_BUTTON));
         SIGN_IN_BUTTON.click();
         return new AccountPage(driver);

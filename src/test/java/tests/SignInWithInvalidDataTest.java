@@ -3,12 +3,15 @@ package tests;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import models.SignInModel;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AuthenticationPage;
 import pages.MainStorePage;
+import testdata.PrepareNewAddressData;
+import testdata.PrepareSignInData;
 
 public class SignInWithInvalidDataTest extends BaseTest {
 
@@ -21,9 +24,11 @@ public class SignInWithInvalidDataTest extends BaseTest {
         MainStorePage mainStorePage = new MainStorePage(driver);
         LOGGER.info(String.format("Page %s initialized", MainStorePage.class.getName()));
         LOGGER.info(String.format("Open %s page", MainStorePage.class.getName()));
+        LOGGER.info(String.format("Model %s initialized", SignInModel.class.getName()));
+        SignInModel signInModel = PrepareSignInData.getValidData();
         LOGGER.info("Open sign in page, enter email and password");
         mainStorePage.openSignInPage()
-                .signInToStoreWithInvalidData();
+                .signInToStoreWithInvalidData(signInModel);
         LOGGER.info(String.format("Page %s initialized", AuthenticationPage.class.getName()));
         AuthenticationPage authenticationPage = new AuthenticationPage(driver);
         LOGGER.info("Check if the user didn't manage to signed in");

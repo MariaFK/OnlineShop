@@ -8,3 +8,4 @@ Checklist:
 7. Check the possibility to search for item by criteria (black color, cotton).
 8. Check the possibility to add additional address in account page.
 9. Check the possibility to confirm an oder.
+10. Check the possibility to send message.
