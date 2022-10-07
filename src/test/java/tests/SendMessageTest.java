@@ -8,17 +8,18 @@ import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AccountPage;
+import pages.ContactUsPage;
 import pages.MainStorePage;
 import pages.ShoppingCartPage;
 
-public class ConfirmAnOderTest extends BaseTest{
+public class SendMessageTest extends BaseTest{
 
-    private static final Logger LOGGER = LogManager.getLogger(ConfirmAnOderTest.class.getName());
+    private static final Logger LOGGER = LogManager.getLogger(SendMessageTest.class.getName());
 
     @Test
-    @Description("User tries to confirm an oder")
-    @Severity(SeverityLevel.TRIVIAL)
-    public void confirmAnOderTest() {
+    @Description("User tries to send message about oder")
+    @Severity(SeverityLevel.CRITICAL)
+    public void sendMessageTest() {
         MainStorePage mainStorePage = new MainStorePage(driver);
         LOGGER.info(String.format("Page %s initialized", MainStorePage.class.getName()));
         LOGGER.info(String.format("Open %s page", MainStorePage.class.getName()));
@@ -28,17 +29,14 @@ public class ConfirmAnOderTest extends BaseTest{
         LOGGER.info(String.format("Page %s initialized", AccountPage.class.getName()));
         LOGGER.info(String.format("Open %s page", AccountPage.class.getName()));
         AccountPage accountPage = new AccountPage(driver);
-        LOGGER.info("Open main store page");
-        accountPage.followMainPage();
-        LOGGER.info("Add item to the cart, click proceed to checkout button");
-        mainStorePage.addItemToCart()
-                .clickProceedToCheckoutButton();
-        LOGGER.info(String.format("Page %s initialized", ShoppingCartPage.class.getName()));
-        LOGGER.info(String.format("Open %s page", ShoppingCartPage.class.getName()));
-        ShoppingCartPage shoppingCartPage = new ShoppingCartPage(driver);
-        LOGGER.info("Confirm oder");
-        shoppingCartPage.confirmOder();
-        LOGGER.info("Check if oder is confirmed");
-        Assert.assertTrue(shoppingCartPage.isConfirmationMessageDisplayed());
+        LOGGER.info("Open contact us page");
+        accountPage.followContactUsPage();
+        LOGGER.info(String.format("Page %s initialized", ContactUsPage.class.getName()));
+        LOGGER.info(String.format("Open %s page", ContactUsPage.class.getName()));
+        ContactUsPage contactUsPage = new ContactUsPage(driver);
+        LOGGER.info("Fill in the message and send it");
+        contactUsPage.fillInAndSendTheMessage();
+        LOGGER.info("Check if the message is sent");
+        Assert.assertTrue(contactUsPage.isConfirmationMessageDisplayed());
     }
 }

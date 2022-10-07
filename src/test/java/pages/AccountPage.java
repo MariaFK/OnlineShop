@@ -17,6 +17,9 @@ public class AccountPage extends BasePage{
     @FindBy(xpath = "//a[@title='My Store']")
     WebElement STORE_BUTTON;
 
+    @FindBy(id = "contact-link")
+    WebElement CONTACT_US_BUTTON;
+
 
     public AccountPage(WebDriver driver) {
         super(driver);
@@ -35,5 +38,10 @@ public class AccountPage extends BasePage{
     @Step("Follow main page")
     public void followMainPage(){
         STORE_BUTTON.click();
+    }
+
+    @Step("Follow contact us page")
+    public void followContactUsPage() {
+        CONTACT_US_BUTTON.click();
     }
 }
