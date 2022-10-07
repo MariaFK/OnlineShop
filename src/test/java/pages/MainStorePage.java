@@ -27,8 +27,11 @@ public class MainStorePage extends BasePage {
     @FindBy(xpath = "//i[@class='icon-ok']")
     WebElement CONFIRM_MESSAGE;
 
-    @FindBy(xpath = "//div[@class='button-container']//span[contains(@class,'continue')]")
+    @FindBy(xpath = "//div[@class='button-container']//span[@title='Continue shopping']")
     WebElement CONTINUE_SHOPPING_BUTTON;
+
+    @FindBy (xpath = "//div[@class='button-container']//a[@title='Proceed to checkout']")
+    WebElement PROCEED_TO_CHECKOUT_BUTTON;
 
     @FindBy(xpath = "//div[@class='shopping_cart']//a[@title='View my shopping cart']")
     WebElement SHOPPING_CART_BUTTON;
@@ -90,6 +93,13 @@ public class MainStorePage extends BasePage {
     public MainStorePage clickContinueShoppingButton() {
         LOGGER.debug("Attempt to click Continue Shopping button");
         CONTINUE_SHOPPING_BUTTON.click();
+        return this;
+    }
+
+    @Step("Click Proceed to Checkout button")
+    public MainStorePage clickProceedToCheckoutButton() {
+        LOGGER.debug("Attempt to clickProceed to Checkout button");
+        PROCEED_TO_CHECKOUT_BUTTON.click();
         return this;
     }
 
