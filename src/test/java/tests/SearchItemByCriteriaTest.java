@@ -9,24 +9,25 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.MainStorePage;
 import pages.SearchResultPage;
+import utils.RetryAnalyzer;
 
 
 public class SearchItemByCriteriaTest extends BaseTest{
 
     private static final Logger LOGGER = LogManager.getLogger(SearchItemByCriteriaTest.class.getName());
 
-    @Test
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     @Description("User tries to search for item by criteria")
     @Severity(SeverityLevel.NORMAL)
     public void searchItemByCriteriaTest() throws InterruptedException {
-        MainStorePage mainStorePage = new MainStorePage(driver);
+        MainStorePage mainStorePage = new MainStorePage(driverManager.getDriver());
         LOGGER.info(String.format("Page %s initialized", MainStorePage.class.getName()));
         LOGGER.info(String.format("Open %s page", MainStorePage.class.getName()));
         LOGGER.info("Attempt to open page with criteria");
         mainStorePage.searchItemByCriteria();
         LOGGER.info(String.format("Page %s initialized", SearchResultPage.class.getName()));
         LOGGER.info(String.format("Open %s page", SearchResultPage.class.getName()));
-        SearchResultPage searchPage = new SearchResultPage(driver);
+        SearchResultPage searchPage = new SearchResultPage(driverManager.getDriver());
         LOGGER.info("Attempt to choose criteria");
         searchPage.chooseTheCriteria();
         LOGGER.info("Check if the item was found");

@@ -8,16 +8,17 @@ import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.MainStorePage;
+import utils.RetryAnalyzer;
 
 public class AddItemToTheShoppingCartTest extends BaseTest{
 
     private static final Logger LOGGER = LogManager.getLogger(AddItemToTheShoppingCartTest.class.getName());
 
-    @Test
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     @Description("User tries to add item to the shopping cart")
     @Severity(SeverityLevel.TRIVIAL)
     public void addItemToTheShoppingCartTest() {
-        MainStorePage mainStorePage = new MainStorePage(driver);
+        MainStorePage mainStorePage = new MainStorePage(driverManager.getDriver());
         LOGGER.info(String.format("Page %s initialized", MainStorePage.class.getName()));
         LOGGER.info(String.format("Open %s page", MainStorePage.class.getName()));
         LOGGER.info("Attempt to add item to the shopping car");

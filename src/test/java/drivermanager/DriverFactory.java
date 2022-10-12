@@ -4,18 +4,18 @@ public class DriverFactory {
 
     public DriverManager getManager(DriverType driverType) {
 
-        DriverManager driverManager;
+        DriverManager driverThreadLocalManager;
 
         switch (driverType) {
             case CHROME:
-                driverManager = new ChromeDriverManager();
+                driverThreadLocalManager = new ChromeDriverManager();
                 break;
             case EDGE:
-                driverManager = new EdgeDriverManager();
+                driverThreadLocalManager = new EdgeDriverManager();
                 break;
             default:
                 throw new IllegalStateException("Unexpected driver type" + driverType);
         }
-        return driverManager;
+        return driverThreadLocalManager;
     }
 }

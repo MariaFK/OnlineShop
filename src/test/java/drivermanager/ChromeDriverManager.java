@@ -15,6 +15,6 @@ public class ChromeDriverManager extends DriverManager {
         options.addArguments("--disable-notifications");
         options.setExperimentalOption("excludeSwitches",
                 Arrays.asList("disable-popup-blocking"));
-        driver = new ChromeDriver(options);
+        threadLocalDriver.set(new ChromeDriver(options));
     }
 }

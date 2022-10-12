@@ -9,16 +9,17 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.MainStorePage;
 import pages.ShoppingCartPage;
+import utils.RetryAnalyzer;
 
 public class DeleteItemFromTheShoppingCartTest extends BaseTest{
 
     private static final Logger LOGGER = LogManager.getLogger(SignInWithValidDataTest.class.getName());
 
-    @Test
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     @Description("User tries to delete item from the shopping cart")
     @Severity(SeverityLevel.MINOR)
     public void signInWithInvalidDataTest() {
-        MainStorePage mainStorePage = new MainStorePage(driver);
+        MainStorePage mainStorePage = new MainStorePage(driverManager.getDriver());
         LOGGER.info(String.format("Page %s initialized", MainStorePage.class.getName()));
         LOGGER.info(String.format("Open %s page", MainStorePage.class.getName()));
         LOGGER.info("Attempt to add item to the shopping car");
@@ -27,7 +28,7 @@ public class DeleteItemFromTheShoppingCartTest extends BaseTest{
                 .clickContinueShoppingButton()
                 .clickShoppingCartButton();
         LOGGER.info(String.format("Page %s initialized", ShoppingCartPage.class.getName()));
-        ShoppingCartPage shoppingCartPage = new ShoppingCartPage(driver);
+        ShoppingCartPage shoppingCartPage = new ShoppingCartPage(driverManager.getDriver());
         shoppingCartPage.deleteItemFromTheCart();
         shoppingCartPage.putExplicitWait();
         LOGGER.info("Check if the item was deleted from the shopping cart");
