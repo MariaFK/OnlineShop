@@ -10,7 +10,6 @@ import org.testng.annotations.Test;
 import pages.AccountPage;
 import pages.ContactUsPage;
 import pages.MainStorePage;
-import pages.ShoppingCartPage;
 
 public class SendMessageTest extends BaseTest{
 

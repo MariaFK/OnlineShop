@@ -10,7 +10,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AuthenticationPage;
 import pages.MainStorePage;
-import testdata.PrepareNewAddressData;
 import testdata.PrepareSignInData;
 
 public class SignInWithInvalidDataTest extends BaseTest {

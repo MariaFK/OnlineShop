@@ -18,9 +18,6 @@ public class MainStorePage extends BasePage {
     @FindBy(xpath = "//a[@class='login']")
     WebElement SIGN_IN_LINK;
 
-//    @FindBy(xpath = "(//a[contains(@class,'product-name')][contains(@title,'Blouse')])[1]")
-//    WebElement BLOUSE_BLOCK;
-
     @FindBy(xpath = "(//a[contains(@class,'product-name')][contains(@title,'Blouse')])[1]/parent::h5/following-sibling::div[@class='button-container']//a[@title='Add to cart']")
     WebElement ADD_BLOUSE_TO_CART;
 

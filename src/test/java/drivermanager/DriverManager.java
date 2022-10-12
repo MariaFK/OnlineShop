@@ -23,10 +23,6 @@ public abstract class DriverManager {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
-    public void removeTimeout() {
-        driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-    }
-
     public void quitDriver() {
         driver.quit();
     }

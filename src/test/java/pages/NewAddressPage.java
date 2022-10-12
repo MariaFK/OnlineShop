@@ -81,8 +81,7 @@ public class NewAddressPage extends BasePage{
     }
 
     public String realAddressTitle(){
-        String realName = ADDRESS_TITLE.getText();
-        return realName;
+        return ADDRESS_TITLE.getText();
     }
 
 }
