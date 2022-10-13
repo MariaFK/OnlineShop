@@ -19,7 +19,6 @@ public class AccountPage extends BasePage {
     @FindBy(id = "contact-link")
     WebElement CONTACT_US_BUTTON;
 
-
     public AccountPage(WebDriver driver) {
         super(driver);
     }

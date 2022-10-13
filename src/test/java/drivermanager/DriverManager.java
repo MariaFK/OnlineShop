@@ -1,8 +1,6 @@
 package drivermanager;
 
 import org.openqa.selenium.WebDriver;
-
-import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 
 public abstract class DriverManager {

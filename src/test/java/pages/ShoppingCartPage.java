@@ -81,5 +81,4 @@ public class ShoppingCartPage extends BasePage {
     public boolean isConfirmationMessageDisplayed(){
         return CONFIRMATION_MESSAGE.isDisplayed();
     }
-
 }

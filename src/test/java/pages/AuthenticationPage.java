@@ -1,5 +1,6 @@
 package pages;
 
+import constants.ExpectedResults;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,7 +19,6 @@ public class AuthenticationPage extends BasePage {
     }
 
     public String expectedMessage() {
-        return "Authentication failed.";
+        return ExpectedResults.AUTHENTICATION_MESSAGE;
     }
-
 }

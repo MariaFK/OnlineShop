@@ -12,7 +12,6 @@ public class AllureService {
         TakesScreenshot screenshot = ((TakesScreenshot) driver);
         return screenshot.getScreenshotAs(OutputType.BYTES);
     }
-
     @Attachment
     public String getSystemName() {
         return System.getProperty("os.name");

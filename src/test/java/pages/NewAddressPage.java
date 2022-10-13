@@ -48,7 +48,6 @@ public class NewAddressPage extends BasePage {
     @FindBy(xpath = "//ul[contains(@class,'last_item')]//h3")
     WebElement ADDRESS_TITLE;
 
-
     public NewAddressPage(WebDriver driver) {
         super(driver);
     }
@@ -79,7 +78,6 @@ public class NewAddressPage extends BasePage {
         LOGGER.debug(String.format("Attempt to click element: %s", SAVE_ADDRESS_BUTTON));
         SAVE_ADDRESS_BUTTON.click();
     }
-
     public String realAddressTitle() {
         return ADDRESS_TITLE.getText();
     }

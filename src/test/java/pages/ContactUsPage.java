@@ -62,7 +62,6 @@ public class ContactUsPage extends BasePage {
         LOGGER.debug("Attempt to click send message button");
         SEND_MESSAGE_BUTTON.click();
     }
-
     public boolean isConfirmationMessageDisplayed() {
         return CONFIRMATION_MESSAGE.isDisplayed();
     }

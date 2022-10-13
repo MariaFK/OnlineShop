@@ -67,10 +67,7 @@ public class MainStorePage extends BasePage {
         LOGGER.debug(String.format("Attempt to open URl: %s", Urls.SHOP_URL));
         driver.get(Urls.SHOP_URL);
         LOGGER.debug("Attempt to add item to the shopping cart");
-        String javaScript = "var evObj = document.createEvent('MouseEvents');" +
-                "evObj.initMouseEvent(\"mouseover\",true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);" +
-                "arguments[0].dispatchEvent(evObj);";
-        ((JavascriptExecutor) driver).executeScript(javaScript, ADD_BLOUSE_TO_CART);
+        hoverTheElement(ADD_BLOUSE_TO_CART);
         ADD_BLOUSE_TO_CART.click();
         return this;
     }
@@ -109,10 +106,7 @@ public class MainStorePage extends BasePage {
     @Step("Check the item's price in the shopping cart")
     public String actualItemPriceInTheShoppingCart() {
         LOGGER.debug("Get the item's price the shopping cart");
-        String javaScript = "var evObj = document.createEvent('MouseEvents');" +
-                "evObj.initMouseEvent(\"mouseover\",true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);" +
-                "arguments[0].dispatchEvent(evObj);";
-        ((JavascriptExecutor) driver).executeScript(javaScript, SHOPPING_CART_BUTTON);
+        hoverTheElement(SHOPPING_CART_BUTTON);
         WebDriverWait wait = new WebDriverWait(driver, 15);
         wait.until(ExpectedConditions.visibilityOf(ITEM_PRICE_IN_SHOPPING_CART));
         return ITEM_PRICE_IN_SHOPPING_CART.getText();

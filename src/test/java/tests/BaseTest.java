@@ -44,5 +44,4 @@ public class BaseTest {
     public void tearDown() {
         driverManager.quitDriver();
     }
-
 }
