@@ -1,5 +1,6 @@
 package pages;
 
+import constants.InformationMessages;
 import io.qameta.allure.Step;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -58,7 +59,7 @@ public class ContactUsPage extends BasePage {
         LOGGER.debug("Attempt to choose product option");
         PRODUCT_OPTION.click();
         LOGGER.debug("Attempt to write message");
-        MESSAGE_TEXTAREA.sendKeys("Good morning! The item didn't fit me in size, can I return it?");
+        MESSAGE_TEXTAREA.sendKeys(InformationMessages.MESSAGE_BEING_SENT);
         LOGGER.debug("Attempt to click send message button");
         SEND_MESSAGE_BUTTON.click();
     }
