@@ -2,7 +2,6 @@ package utils;
 
 import com.github.javafaker.Faker;
 
-
 public class FakerMessageGenerator {
 
     public static String generateEmail() {
@@ -40,5 +39,4 @@ public class FakerMessageGenerator {
     public static String generateAddressTitle() {
         return new Faker().harryPotter().character().toUpperCase();
     }
-
 }

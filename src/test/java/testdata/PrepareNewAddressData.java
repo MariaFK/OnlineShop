@@ -5,7 +5,7 @@ import utils.FakerMessageGenerator;
 
 public class PrepareNewAddressData {
 
-    public static NewAddressModel getValidData(){
+    public static NewAddressModel getValidData() {
         return NewAddressModel.builder()
                 .company(FakerMessageGenerator.generateCompany())
                 .address(FakerMessageGenerator.generateAddress())

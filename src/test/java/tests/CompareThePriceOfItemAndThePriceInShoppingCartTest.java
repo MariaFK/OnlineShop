@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import pages.MainStorePage;
 import utils.RetryAnalyzer;
 
-public class CompareThePriceOfItemAndThePriceInShoppingCartTest extends BaseTest{
+public class CompareThePriceOfItemAndThePriceInShoppingCartTest extends BaseTest {
 
     private static final Logger LOGGER = LogManager.getLogger(CompareThePriceOfItemAndThePriceInShoppingCartTest.class.getName());
 
@@ -26,5 +26,4 @@ public class CompareThePriceOfItemAndThePriceInShoppingCartTest extends BaseTest
         LOGGER.info("Check if the item price in the shopping cart is the same as it's price in the shop");
         Assert.assertEquals(mainStorePage.actualItemPriceInTheShoppingCart(), mainStorePage.expectedItemPrice());
     }
-
 }

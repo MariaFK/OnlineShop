@@ -8,14 +8,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class NewAddressPage extends BasePage{
+public class NewAddressPage extends BasePage {
 
     private static final Logger LOGGER = LogManager.getLogger(NewAddressPage.class.getName());
 
     @FindBy(xpath = "//a[@title='Add an address']")
     WebElement ADD_NEW_ADDRESS_BUTTON;
 
-    @FindBy (id = "company")
+    @FindBy(id = "company")
     WebElement COMPANY_NAME_INPUT;
 
     @FindBy(id = "address1")
@@ -27,7 +27,7 @@ public class NewAddressPage extends BasePage{
     @FindBy(id = "id_state")
     WebElement STATE_DROPDOWN;
 
-    @FindBy (xpath = "//select[@id='id_state']//option[@value='9']")
+    @FindBy(xpath = "//select[@id='id_state']//option[@value='9']")
     WebElement STATE_OPTION;
 
     @FindBy(id = "postcode")
@@ -54,7 +54,7 @@ public class NewAddressPage extends BasePage{
     }
 
     @Step("Fill in address form")
-    public void fillInAddressForm(NewAddressModel newAddress){
+    public void fillInAddressForm(NewAddressModel newAddress) {
         LOGGER.debug("Attempt to click add new address button");
         ADD_NEW_ADDRESS_BUTTON.click();
         LOGGER.debug(String.format("Attempt to send account name: %s", newAddress.getCompany()));
@@ -80,8 +80,7 @@ public class NewAddressPage extends BasePage{
         SAVE_ADDRESS_BUTTON.click();
     }
 
-    public String realAddressTitle(){
+    public String realAddressTitle() {
         return ADDRESS_TITLE.getText();
     }
-
 }

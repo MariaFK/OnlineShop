@@ -7,8 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-
-public class ContactUsPage extends BasePage{
+public class ContactUsPage extends BasePage {
 
     private static final Logger LOGGER = LogManager.getLogger(ContactUsPage.class.getName());
 
@@ -45,7 +44,7 @@ public class ContactUsPage extends BasePage{
     }
 
     @Step("Fill in and send message")
-    public void fillInAndSendTheMessage(){
+    public void fillInAndSendTheMessage() {
         LOGGER.debug("Attempt to open subject heading dropdown");
         SUBJECT_HEADING_DROPDOWN.click();
         LOGGER.debug("Attempt to choose select Customer Service option");
@@ -64,7 +63,7 @@ public class ContactUsPage extends BasePage{
         SEND_MESSAGE_BUTTON.click();
     }
 
-    public boolean isConfirmationMessageDisplayed(){
+    public boolean isConfirmationMessageDisplayed() {
         return CONFIRMATION_MESSAGE.isDisplayed();
     }
 }

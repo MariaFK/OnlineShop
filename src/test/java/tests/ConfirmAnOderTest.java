@@ -12,7 +12,7 @@ import pages.MainStorePage;
 import pages.ShoppingCartPage;
 import utils.RetryAnalyzer;
 
-public class ConfirmAnOderTest extends BaseTest{
+public class ConfirmAnOderTest extends BaseTest {
 
     private static final Logger LOGGER = LogManager.getLogger(ConfirmAnOderTest.class.getName());
 

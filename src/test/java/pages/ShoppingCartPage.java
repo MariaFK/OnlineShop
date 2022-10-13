@@ -78,7 +78,6 @@ public class ShoppingCartPage extends BasePage {
         LOGGER.debug("Attempt to confirm oder");
         CONFIRM_ODER_BUTTON.click();
     }
-
     public boolean isConfirmationMessageDisplayed(){
         return CONFIRMATION_MESSAGE.isDisplayed();
     }

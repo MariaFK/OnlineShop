@@ -7,15 +7,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-
 public class SearchResultPage extends BasePage {
 
     private static final Logger LOGGER = LogManager.getLogger(SearchResultPage.class.getName());
 
-
     @FindBy(className = "heading-counter")
     WebElement SEARCH_RESULTS;
-
 
     @FindBy(xpath = "//input[@class='color-option  '] [@rel='11_3']")
     WebElement BLACK_COLOR_CHECKBOX;

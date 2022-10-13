@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import pages.MainStorePage;
 import utils.RetryAnalyzer;
 
-public class AddItemToTheShoppingCartTest extends BaseTest{
+public class AddItemToTheShoppingCartTest extends BaseTest {
 
     private static final Logger LOGGER = LogManager.getLogger(AddItemToTheShoppingCartTest.class.getName());
 

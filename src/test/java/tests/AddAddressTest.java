@@ -14,7 +14,7 @@ import pages.NewAddressPage;
 import testdata.PrepareNewAddressData;
 import utils.RetryAnalyzer;
 
-public class AddAddressTest extends BaseTest{
+public class AddAddressTest extends BaseTest {
 
     private static final Logger LOGGER = LogManager.getLogger(AddAddressTest.class.getName());
 

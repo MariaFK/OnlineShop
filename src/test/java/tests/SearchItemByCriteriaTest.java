@@ -11,8 +11,7 @@ import pages.MainStorePage;
 import pages.SearchResultPage;
 import utils.RetryAnalyzer;
 
-
-public class SearchItemByCriteriaTest extends BaseTest{
+public class SearchItemByCriteriaTest extends BaseTest {
 
     private static final Logger LOGGER = LogManager.getLogger(SearchItemByCriteriaTest.class.getName());
 
@@ -33,5 +32,4 @@ public class SearchItemByCriteriaTest extends BaseTest{
         LOGGER.info("Check if the item was found");
         Assert.assertTrue(searchPage.searchResultIsShown());
     }
-
 }

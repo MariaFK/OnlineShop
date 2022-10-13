@@ -27,7 +27,7 @@ public class MainStorePage extends BasePage {
     @FindBy(xpath = "//div[@class='button-container']//span[@title='Continue shopping']")
     WebElement CONTINUE_SHOPPING_BUTTON;
 
-    @FindBy (xpath = "//div[@class='button-container']//a[@title='Proceed to checkout']")
+    @FindBy(xpath = "//div[@class='button-container']//a[@title='Proceed to checkout']")
     WebElement PROCEED_TO_CHECKOUT_BUTTON;
 
     @FindBy(xpath = "//div[@class='shopping_cart']//a[@title='View my shopping cart']")
@@ -48,7 +48,6 @@ public class MainStorePage extends BasePage {
 
     @FindBy(xpath = "//a[@title='Women']")
     WebElement CRITERIA_SEARCH_BUTTON;
-
 
     public MainStorePage(WebDriver driver) {
         super(driver);
@@ -125,7 +124,7 @@ public class MainStorePage extends BasePage {
     }
 
     @Step("Search for item by name")
-    public SearchResultPage searchItemByName(){
+    public SearchResultPage searchItemByName() {
         LOGGER.debug(String.format("Attempt to open URl: %s", Urls.SHOP_URL));
         driver.get(Urls.SHOP_URL);
         LOGGER.debug("Attempt to search item Blouse");
@@ -135,13 +134,11 @@ public class MainStorePage extends BasePage {
     }
 
     @Step("Go to search for item by criteria")
-    public SearchResultPage searchItemByCriteria(){
+    public SearchResultPage searchItemByCriteria() {
         LOGGER.debug(String.format("Attempt to open URl: %s", Urls.SHOP_URL));
         driver.get(Urls.SHOP_URL);
         LOGGER.debug("Attempt to open search by criteria");
         CRITERIA_SEARCH_BUTTON.click();
         return new SearchResultPage(driver);
     }
-
-
 }

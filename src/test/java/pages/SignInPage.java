@@ -9,7 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-
 public class SignInPage extends BasePage {
 
     private static final Logger LOGGER = LogManager.getLogger(SignInPage.class.getName());
@@ -22,8 +21,6 @@ public class SignInPage extends BasePage {
 
     @FindBy(id= "SubmitLogin")
     WebElement SIGN_IN_BUTTON;
-
-
 
     public SignInPage(WebDriver driver) {
         super(driver);

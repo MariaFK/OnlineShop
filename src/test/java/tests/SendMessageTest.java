@@ -12,7 +12,7 @@ import pages.ContactUsPage;
 import pages.MainStorePage;
 import utils.RetryAnalyzer;
 
-public class SendMessageTest extends BaseTest{
+public class SendMessageTest extends BaseTest {
 
     private static final Logger LOGGER = LogManager.getLogger(SendMessageTest.class.getName());
 

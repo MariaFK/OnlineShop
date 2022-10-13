@@ -15,5 +15,4 @@ public class NewAddressModel {
     private String homePhone;
     private String mobilePhone;
     private String addressTitle;
-
 }

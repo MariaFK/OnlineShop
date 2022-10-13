@@ -11,7 +11,7 @@ import pages.MainStorePage;
 import pages.SearchResultPage;
 import utils.RetryAnalyzer;
 
-public class SearchItemByNameTest extends BaseTest{
+public class SearchItemByNameTest extends BaseTest {
 
     private static final Logger LOGGER = LogManager.getLogger(SearchItemByNameTest.class.getName());
 

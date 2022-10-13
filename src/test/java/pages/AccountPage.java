@@ -1,17 +1,16 @@
 package pages;
 
-
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class AccountPage extends BasePage{
+public class AccountPage extends BasePage {
 
     @FindBy(xpath = "//a[@class='logout']")
     WebElement SIGN_OUT_BUTTON;
 
-    @FindBy (xpath = "//a[@title='Addresses']")
+    @FindBy(xpath = "//a[@title='Addresses']")
     WebElement MY_ADDRESSES_BUTTON;
 
     @FindBy(xpath = "//a[@title='My Store']")
@@ -31,12 +30,12 @@ public class AccountPage extends BasePage{
     }
 
     @Step("Follow addresses page")
-    public void followAddressesPage(){
+    public void followAddressesPage() {
         MY_ADDRESSES_BUTTON.click();
     }
 
     @Step("Follow main page")
-    public void followMainPage(){
+    public void followMainPage() {
         STORE_BUTTON.click();
     }
 

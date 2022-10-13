@@ -11,7 +11,7 @@ import pages.MainStorePage;
 import pages.ShoppingCartPage;
 import utils.RetryAnalyzer;
 
-public class DeleteItemFromTheShoppingCartTest extends BaseTest{
+public class DeleteItemFromTheShoppingCartTest extends BaseTest {
 
     private static final Logger LOGGER = LogManager.getLogger(SignInWithValidDataTest.class.getName());
 

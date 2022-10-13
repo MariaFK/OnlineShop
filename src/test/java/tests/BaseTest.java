@@ -12,8 +12,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import utils.TestListeners;
 
-import java.net.MalformedURLException;
-
 @Listeners(TestListeners.class)
 public class BaseTest {
 
@@ -24,14 +22,12 @@ public class BaseTest {
         DriverFactory factory = new DriverFactory();
         driverManager = factory.getManager(DriverType.CHROME);
     }
-
     @BeforeMethod
     public void setUp() {
         driverManager.createDriver();
         driverManager.startMaximize();
         driverManager.setTimeout();
     }
-
     public WebDriver getDriver() {
         return driverManager.getDriver();
     }
@@ -49,27 +45,4 @@ public class BaseTest {
         driverManager.quitDriver();
     }
 
-//    @BeforeMethod
-//    public void setUp() {
-//        DriverFactory driverFactory = new DriverFactory();
-//        driverManager = driverFactory.getManager(DriverType.CHROME);
-//        try {
-//            driverManager.createDriver();
-//        } catch (MalformedURLException e) {
-//            throw new RuntimeException(e);
-//        }
-//        driverManager.setTimeout();
-//        driverManager.startMaximize();
-//        driver = driverManager.getDriver();
-//    }
-//
-//    public WebDriver getDriver() {
-//        return driverManager.getDriver();
-//    }
-//
-//
-//    @AfterMethod(alwaysRun = true)
-//    public void tearDown() {
-//        driverManager.quitDriver();
-//    }
 }

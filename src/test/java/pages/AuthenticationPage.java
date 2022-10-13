@@ -18,7 +18,7 @@ public class AuthenticationPage extends BasePage {
     }
 
     public String expectedMessage() {
-       return "Authentication failed.";
+        return "Authentication failed.";
     }
 
 }
